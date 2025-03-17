@@ -2,16 +2,19 @@ package ro.ase.cts.classes;
 
 public class User {
     private int userID;
-    private String UserName;
+    private static int numberOfUsers;
+    private String userName;
 
     public User() {
-        this.userID = 0;
-        UserName = "";
+        numberOfUsers++;
+        this.userID = numberOfUsers;
+        userName = "";
     }
 
-    public User(int userID, String userName) {
-        this.userID = userID;
-        UserName = userName;
+    public User(String userName) {
+        numberOfUsers++;
+        this.userID = numberOfUsers;
+        this.userName = userName;
     }
 
     public int getUserID() {
@@ -23,18 +26,18 @@ public class User {
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "userID=" + userID +
-                ", UserName='" + UserName + '\'' +
+                ", UserName='" + userName + '\'' +
                 '}';
     }
 }

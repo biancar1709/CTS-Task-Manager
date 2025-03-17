@@ -5,9 +5,11 @@ public class Task {
     private String taskName;
     private String taskDesc;
     private int ownerID;
+    private static int numberOfTasks = 0;
     private boolean isHidden;
 
     public Task() {
+        numberOfTasks++;
         this.taskID = 0;
         this.taskName = "";
         this.taskDesc = "";
@@ -15,12 +17,12 @@ public class Task {
         this.isHidden = false;
     }
 
-    public Task(int taskID, String taskName, String taskDesc, int ownerID, boolean isHidden) {
-        this.taskID = taskID;
+    public Task(String taskName, String taskDesc, int ownerID) {
+        numberOfTasks++;
         this.taskName = taskName;
         this.taskDesc = taskDesc;
         this.ownerID = ownerID;
-        this.isHidden = isHidden;
+        this.isHidden = false;
     }
 
     public int getTaskID() {
