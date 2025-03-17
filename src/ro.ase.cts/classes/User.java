@@ -4,6 +4,16 @@ public class User {
     private int userID;
     private static int numberOfUsers;
     private String userName;
+    private String userType;
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
 
     public User() {
         numberOfUsers++;
@@ -15,6 +25,11 @@ public class User {
         numberOfUsers++;
         this.userID = numberOfUsers;
         this.userName = userName;
+        if(userName.equals("admin")){
+            this.userType = "admin";
+        }else{
+            this.userType = "regular";
+        }
     }
 
     public int getUserID() {
